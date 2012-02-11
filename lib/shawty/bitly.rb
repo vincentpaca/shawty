@@ -9,7 +9,7 @@ module Bitly
     def initialize(username, key)
       @username = username
       @key = key
-      raise ArgumentError.new("Please provide a login and api_key") if @username.nil? || @key.nil?
+      raise ArgumentError.new("Please provide a login and api_key") if @username.nil? || @key.nil? || @username == "" || @key == ""
     end
     
     def shorten(url)
